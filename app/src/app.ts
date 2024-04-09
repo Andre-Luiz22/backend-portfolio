@@ -8,17 +8,14 @@ import cors from "cors";
 import { db } from "./config/dbConnet";
 dotenv.config();
 
-db.on("error", console.log.bind(console, "erro de conexão"));
-db.once("open", () => console.log("conexão feita com sucesso"));
+// db.on("error", console.log.bind(console, "erro de conexão"));
+// db.once("open", () => console.log("conexão feita com sucesso"));
 
 export const app = express();
 
 const options: cors.CorsOptions = {
-  origin: "http://localhost:5173",
-  optionsSuccessStatus: 200,
-  allowedHeaders: ["Content-Type", "Authorization"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
+  origin: "*",
+  methods: "GET, POST",
 };
 
 app.use(cors(options));
