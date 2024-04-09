@@ -18,7 +18,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
-  next();
 }, cors({ maxAge: 84600 }));
 app.use(express.json());
 routes(app);
