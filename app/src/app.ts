@@ -1,4 +1,4 @@
-import express, { Request } from "express";
+import express, { NextFunction, Request, Response } from "express";
 
 import { routes } from "./routes";
 
@@ -13,6 +13,8 @@ db.once("open", () => console.log("conexão feita com sucesso"));
 
 export const app = express();
 
-app.use(cors<Request>());
+app.use((req: Request, res: Response, next: NextFunction) => {
+  next();
+}, cors({ maxAge: 84600 }));
 app.use(express.json());
 routes(app);
