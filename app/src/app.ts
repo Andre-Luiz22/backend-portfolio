@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request } from "express";
 
 import { routes } from "./routes";
 
@@ -11,10 +11,8 @@ dotenv.config();
 db.on("error", console.log.bind(console, "erro de conexão"));
 db.once("open", () => console.log("conexão feita com sucesso"));
 
-console.log();
-
 export const app = express();
 
-app.use(cors());
+app.use(cors<Request>());
 app.use(express.json());
 routes(app);
