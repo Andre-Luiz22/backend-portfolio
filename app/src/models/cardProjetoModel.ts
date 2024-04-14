@@ -8,6 +8,7 @@ const cardProjetoSchema = new mongoose.Schema(
     description: { type: mongoose.Schema.Types.String },
     imgPath: { type: mongoose.Schema.Types.String },
     tags: { type: mongoose.Schema.Types.Array },
+    favorito: { type: mongoose.Schema.Types.Boolean },
   },
   {
     versionKey: false,
