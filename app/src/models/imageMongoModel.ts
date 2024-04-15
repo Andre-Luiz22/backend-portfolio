@@ -24,18 +24,18 @@ const imageMongoSchema = new mongoose.Schema(
   }
 );
 
-imageMongoSchema.pre("deleteMany", async function () {
-  const file: string = this.getQuery().key;
+// imageMongoSchema.pre("deleteMany", async function () {
+//   const file: string = this.getQuery().key;
 
-  return promisify(fs.unlink)(
-    path.resolve(__dirname, "..", "..", "..", "tmp", "uploads", file)
-  );
-});
+//   return promisify(fs.unlink)(
+//     path.resolve(__dirname, "..", "..", "..", "tmp", "uploads", file)
+//   );
+// });
 
-imageMongoSchema.pre("save", function () {
-  if (!this.url) {
-    this.url = `${process.env.APP_URL}/imgs/${this.key}`;
-  }
-});
+// imageMongoSchema.pre("save", function () {
+//   if (!this.url) {
+//     this.url = `${process.env.APP_URL}/imgs/${this.key}`;
+//   }
+// });
 
 export const imageMongo = mongoose.model("images", imageMongoSchema);
