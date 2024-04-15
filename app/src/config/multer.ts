@@ -37,9 +37,10 @@ export const multerConfig: multer.Options = {
   ) => {
     const allowedMimes = [
       "image/jpeg",
-      "image/pjpeg",
+      "image/jpegp",
       "image/png",
       "image/webp",
+      "image/jpg"
     ];
     if (allowedMimes.includes(file.mimetype)) {
       cb(null, true);
