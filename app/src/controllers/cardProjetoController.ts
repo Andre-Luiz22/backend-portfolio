@@ -7,9 +7,9 @@ export class CardProjetoController {
       const allCards = await cardProjeto.find();
       res.status(200).json(allCards);
     } catch (err) {
-      res
-        .status(500)
-        .json({ message: "Erro na função de buscar todas as imagens" });
+      // res
+      //   .status(500)
+      //   .json({ message: "Erro na função de buscar todas as imagens" });
     }
   };
 
