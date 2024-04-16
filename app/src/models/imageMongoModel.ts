@@ -1,4 +1,4 @@
-import mongoose, { Error } from "mongoose";
+import mongoose from "mongoose";
 import fs from "fs";
 import path from "path";
 import { promisify } from "util";

@@ -13,7 +13,7 @@ export class FileUploadController {
 
       res.status(200).json(newImage);
     } catch (err) {
-      res.status(500).json({ message: "Algum erro na insersão da imagem" });
+      // res.status(500).json({ message: "Algum erro na insersão da imagem" });
     }
   };
 
