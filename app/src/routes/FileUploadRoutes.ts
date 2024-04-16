@@ -13,4 +13,4 @@ router.post(
   multer(multerConfig).single("file"),
   FileUploadController.insertNewImage
 );
-router.delete("/deleteImageById/:key", FileUploadController.deleteImageByKey);
+router.delete("/deleteImageByKey/:key", FileUploadController.deleteImageByKey);
